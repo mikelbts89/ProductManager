@@ -26,3 +26,34 @@ function getHigh(): void {
   }
 }
 getHigh();
+
+class User {
+  name: string;
+  password: number;
+  email: any;
+  date: any;
+  constructor(_name, _password, _email, _date) {
+    this.name = _name;
+    this.password = _password;
+    this.email = _email;
+    this.date = _date;
+  }
+}
+
+const submitBtn = document.getElementById("submitBtn");
+
+submitBtn.addEventListener("click", () => {
+  const userName = (<HTMLInputElement>document.getElementById("userName"))
+    .value;
+  const userPass = parseFloat(
+    (<HTMLInputElement>document.getElementById("userPass")).value
+  );
+  const userMail = (<HTMLInputElement>document.getElementById("userMail"))
+    .value;
+
+  const user1 = new User(userName, userPass, userMail, new Date());
+  console.log(user1);
+  (<HTMLInputElement>document.getElementById("userName")).value = "";
+  (<HTMLInputElement>document.getElementById("userPass")).value = "";
+  (<HTMLInputElement>document.getElementById("userMail")).value = "";
+});

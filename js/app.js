@@ -21,4 +21,26 @@ function getHigh() {
     }
 }
 getHigh();
+var User = (function () {
+    function User(_name, _password, _email, _date) {
+        this.name = _name;
+        this.password = _password;
+        this.email = _email;
+        this.date = _date;
+    }
+    return User;
+}());
+var submitBtn = document.getElementById("submitBtn");
+submitBtn.addEventListener("click", function () {
+    var userName = document.getElementById("userName")
+        .value;
+    var userPass = parseFloat(document.getElementById("userPass").value);
+    var userMail = document.getElementById("userMail")
+        .value;
+    var user1 = new User(userName, userPass, userMail, new Date());
+    console.log(user1);
+    document.getElementById("userName").value = "";
+    document.getElementById("userPass").value = "";
+    document.getElementById("userMail").value = "";
+});
 //# sourceMappingURL=app.js.map
